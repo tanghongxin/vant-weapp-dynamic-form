@@ -1,0 +1,13 @@
+{
+  "name": "vant-dynamic-form",
+  "version": "0.0.1",
+  "author": "hongxin.tang@hotmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@vant/weapp": "^1.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanghongxin/vant-dynamic-form"
+  }
+}
