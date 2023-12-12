@@ -1,4 +1,8 @@
+const validateBehavior = require('../../components/d-form/validate.behavior')
+
 Page({
+  behaviors: [validateBehavior],
+
   data: {
     model: {
       insuranceNo: '12039796916230123',
@@ -16,6 +20,14 @@ Page({
         key: 'name',
         required: true,
         maxLength: 10,
+      },
+      {
+        component: 'field',
+        label: '投保人手机号',
+        key: 'phone',
+        type: 'number',
+        required: true,
+        maxLength: 11,
       },
       {
         component: 'radio',
@@ -83,4 +95,8 @@ Page({
       [`${path}.${key}`]: value
     })
   },
+
+  async submit() {
+    await this.validate(['#form'], true)
+  }
 })

@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "d-form": "../../components/d-form/index",
+    "d-form-item": "../../components/d-form-item/index",
+    "page-container": "../../components/page-container/index"
+  }
 }

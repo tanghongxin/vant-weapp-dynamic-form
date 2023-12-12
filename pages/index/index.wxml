@@ -1,9 +1,18 @@
 <!--pages/index/index.wxml-->
 <page-container>
   <d-form
+    id="form"
     configs="{{configs}}"
     model="{{model}}"
     data-path="model"
     bind:sync="syncData"
-  ></d-form>
+  >
+    <van-button
+      slot="bottom"
+      type="primary"
+      form-type="submit"
+      block
+      bind:click="submit"
+    >提交</van-button>
+  </d-form>
 </page-container>

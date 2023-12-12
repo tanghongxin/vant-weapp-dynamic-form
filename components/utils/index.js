@@ -25,8 +25,11 @@ const isTruthy = v => {
 
 const isFalsy = v => !isTruthy(v)
 
+const uniq = (arr) => arr.filter((value, index, self) => self.indexOf(value) === index)
+
 module.exports = {
   formatTimestamp,
   isTruthy,
   isFalsy,
+  uniq,
 }

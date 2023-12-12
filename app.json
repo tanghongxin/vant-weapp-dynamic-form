@@ -6,7 +6,6 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
-  "style": "v2",
   "renderer": "skyline",
   "rendererOptions": {
     "skyline": {
@@ -19,9 +18,5 @@
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
-  "usingComponents": {
-    "d-form": "./components/d-form/index",
-    "d-form-item": "./components/d-form-item/index",
-    "page-container": "./components/page-container/index"
-  }
+  "usingComponents": {}
 }
