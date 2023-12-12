@@ -1,4 +1,4 @@
-# vant-dynamic-form
+# vant-weapp-dynamic-form
 
 基于 [vant](https://vant-contrib.gitee.io/vant-weapp/#/home) 的微信小程序动态表单组件实现，支持以声明式配置动态创建表单
 

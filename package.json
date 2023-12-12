@@ -1,5 +1,5 @@
 {
-  "name": "vant-dynamic-form",
+  "name": "vant-weapp-dynamic-form",
   "version": "0.0.1",
   "author": "hongxin.tang@hotmail.com",
   "description": "基于 vant 的微信小程序动态表单组件实现，支持以声明式配置动态创建表单",
@@ -10,6 +10,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tanghongxin/vant-dynamic-form"
+    "url": "https://github.com/tanghongxin/vant-weapp-dynamic-form"
   }
 }
