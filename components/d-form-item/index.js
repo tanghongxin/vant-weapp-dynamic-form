@@ -152,8 +152,7 @@ Component({
             .replace("$#$", ".")
         }
       }
-
-      this.setData({ [`model.${key}`]: value }, cb)
+      
       this.triggerEvent('sync', { key, value })
     },
     showPopup() {

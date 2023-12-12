@@ -2,7 +2,7 @@
 <scroll-view scroll-y class="d-form-wrapper">
   <van-cell-group border="{{border}}">
     <d-form-item
-      wx:for="{{configs}}"
+      wx:for="{{_configs}}"
       wx:key="key"
       config="{{item}}"
       model="{{model}}"

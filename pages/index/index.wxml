@@ -4,6 +4,7 @@
     id="form"
     configs="{{configs}}"
     model="{{model}}"
+    readonly="{{readonly}}"
     data-path="model"
     bind:sync="syncData"
   >
@@ -13,6 +14,6 @@
       form-type="submit"
       block
       bind:click="submit"
-    >提交</van-button>
+    >{{ readonly ? '编辑'  : '保存'}}</van-button>
   </d-form>
 </page-container>

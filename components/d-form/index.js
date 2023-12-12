@@ -1,8 +1,9 @@
 // components/d-form/index.js
+const computedBehavior = require('miniprogram-computed').behavior
 const { isFalsy } = require('../utils/index')
 
 Component({
-  behaviors: ['wx://component-export'],
+  behaviors: ['wx://component-export', computedBehavior],
   export() {
     return {
       validate: this.validate.bind(this),
@@ -31,13 +32,27 @@ Component({
       type: Boolean,
       value: false,
     },
+    readonly: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   /**
    * 组件的初始数据
    */
   data: {
+    _configs: [],
+  },
 
+  computed: {
+    _configs(data) {
+      const { configs = [], readonly } = data
+      return configs.map(config => ({
+        ...config,
+        readonly: readonly || !!config.readonly,
+      }))
+    }
   },
 
   /**
@@ -46,7 +61,6 @@ Component({
   methods: {
     syncData(e) {
       const { key, value } = e.detail
-      this.setData({ [`model.${key}`]: value })
       this.triggerEvent('sync', { key, value })
     },
     validate() {

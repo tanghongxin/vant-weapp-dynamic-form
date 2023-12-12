@@ -6,6 +6,14 @@ Page({
   data: {
     model: {
       insuranceNo: '12039796916230123',
+      name: 'Tom',
+      sex: '1',
+      plan: 'A',
+      fileList: [
+        {
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg'
+        }
+      ]
     },
     configs: [
       {
@@ -85,7 +93,8 @@ Page({
         key: 'range',
         required: false,
       },
-    ]
+    ],
+    readonly: false,
   },
 
   syncData(e) {
@@ -97,11 +106,15 @@ Page({
   },
 
   async submit() {
-    await this.validate(['#form'], true)
-    wx.showToast({
-      title: '校验通过',
-      icon: 'success',
-      duration: 2000,
-    })
+    if (this.data.readonly) {
+      this.setData({
+        readonly: false,
+      })
+    } else {
+      await this.validate(['#form'], true)
+      this.setData({
+        readonly: true,
+      })
+    }
   }
 })
