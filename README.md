@@ -65,7 +65,7 @@
 ### 上传（uploader）
 ```json
 {
-  "component": "上传（uploader）",
+  "component": "uploader",
   "key": "",
   "label": "",
   "readonly": false,
