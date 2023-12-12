@@ -269,13 +269,24 @@ Component({
     async attached() {
       const { key, component, columns = [] } = this.data.config
       const { model } = this.data
+      const value = model[key]
 
       this.setData({ columns })
 
-      // init default value
-      if (['uploader'].includes(component)) {
-        if (!Array.isArray(model[key])) {
+      if ('uploader' === component) {
+        if (!Array.isArray(value)) {
           this.syncData(key, [])
+        }
+      }
+
+      else if ('year-range-picker' === component) {
+        if (value.length === 9) {
+          const [_rangeStart, _rangeEnd] = value.split('-')
+          this.setData({ _rangeStart }, () => {
+            const picker = this.selectComponent('.year-range-picker')
+            picker.setColumnValue(0, ~~_rangeStart)
+            picker.setColumnValue(1, ~~_rangeEnd)
+          })
         }
       }
     },

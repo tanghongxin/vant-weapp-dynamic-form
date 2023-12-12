@@ -141,6 +141,7 @@
     round
   >
     <van-picker
+      class="year-range-picker"
       title="{{config.label}}"
       show-toolbar
       columns="{{yearRange}}"
