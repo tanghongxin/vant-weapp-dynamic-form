@@ -2,11 +2,14 @@
 
 基于 [vant](https://vant-contrib.gitee.io/vant-weapp/#/home) 的微信小程序动态表单组件实现，支持以声明式配置动态创建表单
 
+## 效果示例
+
+<img src="https://s2.loli.net/2023/12/12/NYsAhb5iFEkcGLf.png" style="display: inline-block" width="50%" />
+
 ## 安装
 1. 安装相关依赖 ```npm i -S @vant/weapp miniprogram-computed```
 2. 微信开发者工具/工具/构建 npm
 3. 拷贝 ```components``` 目录至你的项目下
-
 
 ## 使用
 参见 [pages/index](./pages/index/index.wxml)
@@ -14,6 +17,7 @@
 ## 配置方式
 
 ### 输入框（field）
+
 ```json
 {
   "component": "field",
@@ -31,6 +35,7 @@
 ```
 
 ### 选择器（picker）
+
 ```json
 {
   "component": "picker",
@@ -47,6 +52,7 @@
 ```
 
 ### 单选框（radio）
+
 ```json
 {
   "component": "radio",
@@ -65,6 +71,7 @@
 ```
 
 ### 图像、视频上传（uploader）
+
 ```json
 {
   "component": "uploader",
@@ -80,6 +87,7 @@
 ```
 
 ### 时间选择（datetime-picker）
+
 ```json
 {
   "component": "datetime-picker",
@@ -93,6 +101,7 @@
 ```
 
 ### 年份区间选择（year-range-picker）
+
 ```json
 {
   "component": "year-range-picker",
