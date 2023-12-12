@@ -1,0 +1,7 @@
+<!--components/page-container/index.wxml-->
+<view
+  class="page-container"
+  style="padding-bottom: {{bottom}}px; padding-top: {{top}}px;"
+>
+  <slot></slot>
+</view>

@@ -4,7 +4,8 @@
   "author": "hongxin.tang@hotmail.com",
   "license": "MIT",
   "dependencies": {
-    "@vant/weapp": "^1.11.1"
+    "@vant/weapp": "^1.11.1",
+    "miniprogram-computed": "^4.4.0"
   },
   "repository": {
     "type": "git",

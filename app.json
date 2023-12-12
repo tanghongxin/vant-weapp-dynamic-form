@@ -18,5 +18,10 @@
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "d-form": "./components/d-form/index",
+    "d-form-item": "./components/d-form-item/index",
+    "page-container": "./components/page-container/index"
+  }
 }

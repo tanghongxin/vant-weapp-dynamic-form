@@ -1,0 +1,48 @@
+/* components/d-form-item/index.wxss */
+.custom-class {
+  padding-top: 28rpx !important;
+  padding-bottom: 28rpx !important;
+}
+
+.custom-class__picker .van-picker-column__item {
+  box-sizing: border-box !important;
+  padding: 0 10px !important;
+  overflow: auto !important;
+  text-overflow: unset !important;
+  white-space: no-wrap !important;
+}
+
+.van-field__label {
+  width: 198rpx !important;
+  font-family: PingFangSC-Medium !important;
+  font-size: 32rpx !important;
+  color: #333333 !important;
+  font-weight: bold !important;
+  border-bottom: none;
+}
+
+.van-field__control,
+.van-field__body {
+  font-size: 28rpx !important;
+  color: #101010 !important;
+  font-weight: 400 !important;
+  /* border-bottom: 2rpx solid rgba(238,238,238,1); */
+  border-bottom: none;
+}
+
+.uploader-wrapper .van-field__control {
+  min-height: 88px;
+  height: auto;
+}
+
+.uploader-wrapper .van-field__body {
+  border-bottom: none;
+}
+
+.van-cell__value {
+  display: flex !important;
+}
+
+.van-field__body {
+  flex: 1 !important;
+}

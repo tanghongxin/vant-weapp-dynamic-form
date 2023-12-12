@@ -3,5 +3,6 @@
   "projectname": "vant-dynamic-form",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "3.1.5"
 }

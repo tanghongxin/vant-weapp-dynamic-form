@@ -10,7 +10,8 @@
   bind:touchcancel="onTouchEnd"
 >
   <view style="{{ computed.wrapperStyle({ offset, itemHeight, visibleItemCount, duration }) }}">
-    <view
+    <scroll-view
+      scroll-x
       wx:for="{{ options }}"
       wx:for-item="option"
       wx:key="index"
@@ -18,6 +19,8 @@
       style="height: {{ itemHeight }}px"
       class="van-ellipsis {{ utils.bem('picker-column__item', { disabled: option && option.disabled, selected: index === currentIndex }) }} {{ index === currentIndex ? 'active-class' : '' }}"
       bindtap="onClickItem"
-    >{{ computed.optionText(option, valueKey) }}</view>
+    >
+      <view>{{ computed.optionText(option, valueKey) }}</view> 
+    </scroll-view>
   </view>
 </view>

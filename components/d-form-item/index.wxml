@@ -1,0 +1,185 @@
+<!--components/d-form-item/index.wxml-->
+
+<!-- 输入框 -->
+<van-field
+  wx:if="{{config.component === 'field'}}"
+  custom-class="custom-class"
+  border="{{false}}"
+  clearable="{{!config.readonly}}"
+  label="{{config.label}}"
+  placeholder="{{placeholder}}"
+  value="{{model[config.key]}}"
+  required="{{required}}"
+  readonly="{{config.readonly}}"
+  maxlength="{{config.maxLength || -1}}"
+  show-word-limit="{{!config.readonly && config.maxLength}}"
+  type="{{config.type || 'text'}}"
+  autosize="{{config.autosize || true}}"
+  bind:change="onChange"
+></van-field>
+
+<!-- 下拉选择 -->
+<view wx:if="{{config.component === 'picker'}}">
+  <van-field
+    border="{{false}}"
+    custom-class="custom-class"
+    label="{{config.label}}"
+    placeholder="{{placeholder}}"
+    value="{{text}}"
+    required="{{required}}"
+    readonly="{{true}}"
+    bindtap="showPopup"
+    right-icon="{{config.readonly ? '' : 'arrow'}}"
+  >
+    <!-- <van-icon
+      wx:if="{{clearable}}"
+      name="clear"
+      slot="right-icon"
+      catch:touchstart="onClear"
+    ></van-icon> -->
+  </van-field>
+  <van-popup
+    show="{{show}}"
+    bind:close="closePopup"
+    position="bottom"
+    safe-area-inset-top
+    round
+  >
+    <van-picker
+      custom-class="custom-class__picker"
+      title="{{config.label}}"
+      show-toolbar
+      columns="{{columns}}"
+      readonly="{{config.readonly}}"
+      bind:cancel="closePopup"
+      bind:confirm="onConfirm"
+    ></van-picker>
+  </van-popup>
+</view>
+
+<!-- 图像、视频上传 -->
+<van-field
+  wx:if="{{config.component === 'uploader'}}"
+  border="{{false}}"
+  custom-class="custom-class"
+  custom-class="{{config.readonly && emptyFileList ? '' : 'uploader-wrapper'}}"
+  label="{{config.label}}"
+  placeholder="{{placeholder}}"
+  value="{{model[config.key]}}"
+  required="{{required}}"
+  readonly="{{config.readonly}}"
+  bind:change="onChange"
+>
+  <view
+    wx:if="{{config.readonly && emptyFileList}}"
+    slot="input"
+  >
+    <!-- 未上传 -->
+  </view>
+  <van-uploader
+    wx:else
+    slot="input"
+    accept="media"
+    media-type="{{config.mediaType}}"
+    file-list="{{fileList}}"
+    max-duration="{{config.maxDuration || 30}}"
+    capture="{{config.capture || ['camera']}}"
+    deletable="{{!config.readonly}}"
+    disabled="{{config.readonly}}"
+    max-count="{{config.maxCount || 6}}"
+    show-upload="{{!config.readonly}}"
+    bind:delete="onDelete"
+    bind:after-read="beforeUpload"
+    bind:click-preview="onPreview"
+  />
+</van-field>
+
+<!-- 时间选择 -->
+<view wx:if="{{config.component === 'datetime-picker'}}">
+  <van-field
+    border="{{false}}"
+    custom-class="custom-class"
+    label="{{config.label}}"
+    placeholder="{{placeholder}}"
+    value="{{text}}"
+    required="{{required}}"
+    readonly="{{true}}"
+    bindtap="showPopup"
+    right-icon="{{config.readonly ? '' : 'arrow'}}"
+  >
+  </van-field>
+  <van-popup
+    show="{{ show }}"
+    bind:close="closePopup"
+    position="bottom"
+    safe-area-inset-top
+    round
+  >
+  <van-datetime-picker
+    title="{{config.label}}"
+    type="{{config.type}}"
+    value="{{model[config.key]}}"
+    max-date="{{maxDate}}"
+    min-date="{{minDate}}"
+    bind:cancel="closePopup"
+    bind:confirm="onConfirm"
+  />
+  </van-popup>
+</view>
+
+<!-- 时间段（年）选择 -->
+<view wx:if="{{config.component === 'year-range-picker'}}">
+  <van-field
+    border="{{false}}"
+    custom-class="custom-class"
+    label="{{config.label}}"
+    placeholder="{{placeholder}}"
+    value="{{text}}"
+    required="{{required}}"
+    readonly="{{true}}"
+    bindtap="showPopup"
+    right-icon="{{config.readonly ? '' : 'arrow'}}"
+  >
+  </van-field>
+  <van-popup
+    show="{{ show }}"
+    bind:close="closePopup"
+    position="bottom"
+    safe-area-inset-top
+    round
+  >
+    <van-picker
+      title="{{config.label}}"
+      show-toolbar
+      columns="{{yearRange}}"
+      readonly="{{config.readonly}}"
+      bind:cancel="closePopup"
+      bind:confirm="onConfirm"
+      bind:change="rangeChange"
+    ></van-picker>
+  </van-popup>
+</view>
+
+<!-- 单选 -->
+<van-field
+  wx:if="{{config.component === 'radio'}}"
+  border="{{false}}"
+  custom-class="custom-class"
+  label="{{config.label}}"
+  required="{{required}}"
+  value="{{text}}"
+>
+  <van-radio-group
+    wx:if="{{!config.readonly}}"
+    slot="input"
+    value="{{model[config.key]}}"
+    bind:change="onChange"
+    direction="{{config.diection || 'horizontal'}}"
+  >
+    <van-radio
+      wx:for="{{columns}}"
+      wx:key="index"
+      name="{{item.value}}"
+    >{{item.text}}</van-radio>
+  </van-radio-group>
+</van-field>

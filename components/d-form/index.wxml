@@ -1,0 +1,13 @@
+<!--components/d-form/index.wxml-->
+<scroll-view scroll-y class="wrapper">
+  <van-cell-group border="{{border}}">
+    <d-form-item
+      wx:for="{{configs}}"
+      wx:key="key"
+      config="{{item}}"
+      model="{{model}}"
+      bind:sync="syncData"
+    ></d-form-item>
+    <slot name="bottom"></slot>
+  </van-cell-group>
+</scroll-view>

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "d-form-item": "../d-form-item/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  }
+}

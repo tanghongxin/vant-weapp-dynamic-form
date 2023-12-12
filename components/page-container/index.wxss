@@ -1,0 +1,5 @@
+/* components/page-container/index.wxss */
+.page-container {
+  box-sizing: border-box;
+  height: 100vh;
+}

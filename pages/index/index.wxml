@@ -1,7 +1,9 @@
-<!--index.wxml-->
-<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    Weixin
-  </view>
-</scroll-view>
+<!--pages/index/index.wxml-->
+<page-container>
+  <d-form
+    configs="{{configs}}"
+    model="{{model}}"
+    data-path="model"
+    bind:sync="syncData"
+  ></d-form>
+</page-container>
