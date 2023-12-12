@@ -1,5 +1,5 @@
 <!--components/d-form/index.wxml-->
-<scroll-view scroll-y class="wrapper">
+<scroll-view scroll-y class="d-form-wrapper">
   <van-cell-group border="{{border}}">
     <d-form-item
       wx:for="{{configs}}"

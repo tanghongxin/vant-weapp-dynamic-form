@@ -26,7 +26,7 @@ Page({
         label: '投保人手机号',
         key: 'phone',
         type: 'number',
-        required: true,
+        required: false,
         maxLength: 11,
       },
       {
@@ -77,13 +77,13 @@ Page({
         key: 'date',
         type: 'date',
         format: 'yyyy-MM-dd',
-        required: true,
+        required: false,
       },
       {
         component: 'year-range-picker',
         label: '合同有效期',
         key: 'range',
-        required: true,
+        required: false,
       },
     ]
   },
@@ -98,5 +98,10 @@ Page({
 
   async submit() {
     await this.validate(['#form'], true)
+    wx.showToast({
+      title: '校验通过',
+      icon: 'success',
+      duration: 2000,
+    })
   }
 })

@@ -58,11 +58,13 @@
   "columns": [
     { "text": "A", "value": "0" },
     { "text": "B", "value": "1" }
-  ]
+  ],
+  // "direction": "horizontal",
+  "direction": "vertical"
 }
 ```
 
-### 上传（uploader）
+### 图像、视频上传（uploader）
 ```json
 {
   "component": "uploader",

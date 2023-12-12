@@ -31,10 +31,6 @@ Component({
       type: Boolean,
       value: false,
     },
-    showAllFields: {
-      type: Boolean,
-      value: true, 
-    },
   },
 
   /**

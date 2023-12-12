@@ -18,7 +18,7 @@
   bind:change="onChange"
 ></van-field>
 
-<!-- 下拉选择 -->
+<!-- 选择器 -->
 <view wx:if="{{config.component === 'picker'}}">
   <van-field
     border="{{false}}"
@@ -30,14 +30,7 @@
     readonly="{{true}}"
     bindtap="showPopup"
     right-icon="{{config.readonly ? '' : 'arrow'}}"
-  >
-    <!-- <van-icon
-      wx:if="{{clearable}}"
-      name="clear"
-      slot="right-icon"
-      catch:touchstart="onClear"
-    ></van-icon> -->
-  </van-field>
+  ></van-field>
   <van-popup
     show="{{show}}"
     bind:close="closePopup"
@@ -69,12 +62,12 @@
   readonly="{{config.readonly}}"
   bind:change="onChange"
 >
+  <!-- 未上传 -->
   <view
     wx:if="{{config.readonly && emptyFileList}}"
     slot="input"
-  >
-    <!-- 未上传 -->
-  </view>
+  ></view>
+  <!-- 已上传列表 -->
   <van-uploader
     wx:else
     slot="input"
@@ -126,7 +119,7 @@
   </van-popup>
 </view>
 
-<!-- 时间段（年）选择 -->
+<!-- 年份区间选择 -->
 <view wx:if="{{config.component === 'year-range-picker'}}">
   <van-field
     border="{{false}}"
@@ -159,7 +152,7 @@
   </van-popup>
 </view>
 
-<!-- 单选 -->
+<!-- 单选框 -->
 <van-field
   wx:if="{{config.component === 'radio'}}"
   border="{{false}}"
@@ -173,7 +166,7 @@
     slot="input"
     value="{{model[config.key]}}"
     bind:change="onChange"
-    direction="{{config.diection || 'horizontal'}}"
+    direction="{{config.direction || 'horizontal'}}"
   >
     <van-radio
       wx:for="{{columns}}"

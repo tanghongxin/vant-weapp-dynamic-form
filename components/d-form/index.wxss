@@ -1,5 +1,5 @@
 /* components/d-form/index.wxss */
 
-.wrapper {
+.d-form-wrapper {
   height: 100%;
 }

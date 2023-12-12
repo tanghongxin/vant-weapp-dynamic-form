@@ -15,16 +15,15 @@ module.exports = Behavior({
         if (r.length) {
           const title = '以下信息未录入：'
           const content = r.join('、')
+          reject(new Error(title + content))
           if (showErrors) {
             wx.showModal({
               title,
               content,
-              icon: 'error',
               duration: 2000,
               showCancel: false,
             })
           }
-          reject(new Error(title + content))
         } else {
           resolve()
         }
