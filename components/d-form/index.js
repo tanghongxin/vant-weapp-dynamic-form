@@ -72,7 +72,7 @@ Component({
         if (!config.required) continue
         const value = model[config.key]
 
-        // 过滤正在上传、上传失败的图片
+        // 过滤正在上传、上传失败的图片、影像
         if (config.component === 'uploader') {
           const uploadedList = (value || []).filter(item => !['uploading', 'failed'].includes(item.status))
           if (uploadedList.length === 0) {

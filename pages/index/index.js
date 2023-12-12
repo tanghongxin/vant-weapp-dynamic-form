@@ -7,13 +7,17 @@ Page({
     model: {
       insuranceNo: '12039796916230123',
       name: 'Tom',
+      phone: '12345678901',
       sex: '1',
       plan: 'A',
+      detail: 'Is that what this was?',
       fileList: [
         {
-          url: 'https://img.yzcdn.cn/vant/leaf.jpg'
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
         }
-      ]
+      ],
+      date: 1575129600000,
+      range: '2020-2023'
     },
     configs: [
       {
@@ -24,14 +28,14 @@ Page({
       },
       {
         component: 'field',
-        label: '投保人姓名',
+        label: '姓名',
         key: 'name',
         required: true,
         maxLength: 10,
       },
       {
         component: 'field',
-        label: '投保人手机号',
+        label: '手机号',
         key: 'phone',
         type: 'number',
         required: false,
@@ -39,7 +43,7 @@ Page({
       },
       {
         component: 'radio',
-        label: '投保人性别',
+        label: '性别',
         key: 'sex',
         required: true,
         columns: [
