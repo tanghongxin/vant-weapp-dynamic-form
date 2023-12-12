@@ -13,7 +13,9 @@ Component({
   properties: {
     config: {
       type: Object,
-      value: {},
+      value: {
+        label: '',
+      },
     },
     model: {
       type: Object,
@@ -31,6 +33,14 @@ Component({
     columns: [],
     show: false,
     _rangeStart: null,
+
+    // computed 初始值设置（可选），减少控制台 warnings 提示
+    placeholder: '',
+    text: '',
+    maxDate: 0,
+    minDate: 0,
+    fileList: [],
+    yearRange: [],
   },
 
   computed: {
