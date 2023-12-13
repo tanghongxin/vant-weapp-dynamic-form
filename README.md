@@ -108,6 +108,8 @@
   "key": "",
   "label": "",
   "readonly": false,
-  "required": false
+  "required": false,
+  "maxYear": 2033,
+  "minYear": 2010
 }
 ```

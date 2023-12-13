@@ -92,7 +92,7 @@ Component({
     },
     maxYear(data) {
       const { maxYear } = data.config
-      return maxYear || new Date().getFullYear()
+      return maxYear || new Date().getFullYear() + 10
     },
     yearRange(data) {
       const { maxYear, minYear, _rangeStart, config } = data
@@ -122,7 +122,7 @@ Component({
       const { model } = data
       const { component, key } = data.config
 
-      if (!['uploader'].includes(component)) return []
+      if ('uploader' !== component) return []
 
       return model[key] || []
     },
@@ -199,11 +199,10 @@ Component({
       const { model, config } = this.data
       const { key } = config
 
-      let index = model[key].findIndex(file => file === item)
+      const index = model[key].findIndex(file => file === item)
 
       if (index === -1) {
         model[key].push(item)
-        index = model[key].length - 1
       }
 
       const complete = () => {
@@ -212,9 +211,9 @@ Component({
         // 过程中，model[key] 可能不是最新的（闭包下）
         // 也可能在过程中手动取消了图片上传
         // 故在上传结束后需对状态进行确认（通过 this.data 访问最新数据）
-        const index = this.data.model[key].findIndex(e => e.url === item.url)
-        if (index !== -1) {
-          this.data.model[key].splice(index, 1, item)
+        const idx = this.data.model[key].findIndex(e => e.url === item.url)
+        if (idx !== -1) {
+          this.data.model[key].splice(idx, 1, item)
           this.syncData(key, this.data.model[key])
         }
       }

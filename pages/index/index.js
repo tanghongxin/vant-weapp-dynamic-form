@@ -96,6 +96,8 @@ Page({
         label: '合同有效期',
         key: 'range',
         required: false,
+        maxYear: 2040,
+        minYear: 2000,
       },
     ],
     readonly: false,
