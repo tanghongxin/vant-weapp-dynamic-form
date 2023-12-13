@@ -180,6 +180,7 @@ Component({
     },
     onClear() {
       this.syncData(this.data.config.key, '')
+      this.closePopup()
     },
     onChange(e) {
       this.syncData(this.data.config.key, e.detail)

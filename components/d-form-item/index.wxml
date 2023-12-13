@@ -44,7 +44,8 @@
       show-toolbar
       columns="{{columns}}"
       readonly="{{config.readonly}}"
-      bind:cancel="closePopup"
+      cancel-button-text="清空"
+      bind:cancel="onClear"
       bind:confirm="onConfirm"
     ></van-picker>
   </van-popup>
@@ -113,7 +114,8 @@
     value="{{model[config.key]}}"
     max-date="{{maxDate}}"
     min-date="{{minDate}}"
-    bind:cancel="closePopup"
+    cancel-button-text="清空"
+    bind:cancel="onClear"
     bind:confirm="onConfirm"
   />
   </van-popup>
@@ -146,7 +148,8 @@
       show-toolbar
       columns="{{yearRange}}"
       readonly="{{config.readonly}}"
-      bind:cancel="closePopup"
+      cancel-button-text="清空"
+      bind:cancel="onClear"
       bind:confirm="onConfirm"
       bind:change="rangeChange"
     ></van-picker>
