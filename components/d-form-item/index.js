@@ -45,11 +45,11 @@ Component({
 
   computed: {
     text(data) {
-      const { key, component, format } = data.config
+      const { key, component, format = 'yyyy-MM-dd' } = data.config
       const { columns, model } = data
       const value = model[key]
 
-      if (component === 'datetime-picker' && format && isTruthy(value)) {
+      if (component === 'datetime-picker' && isTruthy(value)) {
         return formatTimestamp(Number(value), format)
       }
 
@@ -132,7 +132,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    syncData(key, value, cb = () => { }) {
+    syncData(key, value) {
       const { component, type } = this.data.config
 
       // 数字类型处理，应对第三方键盘输入或手动粘贴的情况
